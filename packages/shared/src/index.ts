@@ -24,3 +24,12 @@ export const isNumber = (value) => {
 export const isArray = (value) => {
     return Array.isArray(value)
 }
+
+export const objectToString = (value: unknown) => Object.prototype.toString
+
+/** 将传入的value 转换为字符串类型 */
+export const toTypeSting = (value: unknown): string => objectToString.call(value) 
+
+export const toRawType = (value: any): string => {
+    return toTypeSting(value).slice(8, -1)
+}
