@@ -72,7 +72,4 @@ export function reactive(target) {
     }
     return createReactiveObj(target, false, mutableHandlers, mutableCollectionHandlers, reactiveMap)
 }
-function toRowType(value: Target): string {
-    throw new Error('Function not implemented.')
-}
 

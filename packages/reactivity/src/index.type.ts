@@ -57,7 +57,7 @@ export interface ProxyHandler<T extends object> {
     /**
      *  `get` 拦截函数
      */
-    get?(target: T, reciver: any): any;
+    get?(target: T, key: string | symbol, reciver: any): any;
 
     /**
      * `set` 拦截函数

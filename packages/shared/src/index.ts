@@ -1,3 +1,4 @@
+import { isFunction } from './index';
 /**
  * 判断对象
  */
@@ -32,4 +33,12 @@ export const toTypeSting = (value: unknown): string => objectToString.call(value
 
 export const toRawType = (value: any): string => {
     return toTypeSting(value).slice(8, -1)
+}
+
+export const hasOwn = (val: object, key: string | symbol): key is keyof typeof val => Object.prototype.hasOwnProperty(key)
+
+export const isSymbol = (val: unknown): val is symbol => typeof val === 'symbol'
+
+export const isPromise = <T = any>(val: unknown): val is Promise<T> => {
+    return isObject(val) && isFunction(val.then) && isFunction(val.catch)
 }
